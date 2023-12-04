@@ -8,7 +8,7 @@ scrape_configs:
       # Server metrics target
       - targets:
           # - 'host.docker.internal:8000'
-          - 'temporal:7233'
+          - 'temporal:8000'
         labels:
           group: 'server-metrics'
 

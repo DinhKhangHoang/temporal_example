@@ -91,6 +91,8 @@ services:
     depends_on:
       - temporal
       - postgresql
+    networks:
+      - temporal-network
   grafana:
     container_name: grafana
     image: grafana/grafana:7.5.16
@@ -106,6 +108,8 @@ services:
         target: /etc/grafana/provisioning/datasources
     depends_on:
       - prometheus
+    networks:
+      - temporal-network
 networks:
   temporal-network:
     driver: bridge
