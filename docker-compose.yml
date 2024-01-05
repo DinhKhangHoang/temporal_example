@@ -29,6 +29,8 @@ services:
       - 5432
     volumes:
       - /var/lib/postgresql/data
+    ports:
+      - 5432:5432
   temporal:
     container_name: temporal
     depends_on:
