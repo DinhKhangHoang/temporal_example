@@ -8,16 +8,16 @@ scrape_configs:
       # Server metrics target
       - targets:
           # - 'host.docker.internal:8000'
-          - 'temporal:8000'
+          - '10.116.122.4:8000'
         labels:
           group: 'server-metrics'
 
       # # Local app targets (if configured)
-      # - targets:
-      #     - 'host.docker.internal:8077'
-      #     - 'host.docker.internal:8078'
-      #   labels:
-      #     group: 'sdk-metrics'
+      - targets:
+           - '10.116.122.4:8077'
+           - '10.116.122.4:8078'
+        labels:
+           group: 'sdk-metrics'
       # # Docker metrics
       # - targets:
       #     - 'host.docker.internal:9323'
@@ -29,11 +29,11 @@ scrape_configs:
           - 'postgresql:9187'
         labels:
           group: 'postgres-metrics'
-  # - job_name: 'springbootjavasdk'
-  #   metrics_path: /actuator/prometheus
-  #   scheme: http
-  #   static_configs:
-  #     - targets:
-  #         - 'host.docker.internal:3030'
-  #       labels:
-  #         group: 'spring-boot-metrics'
+  - job_name: 'springbootjavasdk'
+    metrics_path: /actuator/prometheus
+    scheme: http
+    static_configs:
+       - targets:
+           - '10.116.122.4:3030'
+         labels:
+           group: 'spring-boot-metrics'

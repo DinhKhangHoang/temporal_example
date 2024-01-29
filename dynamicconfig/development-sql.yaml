@@ -4,3 +4,12 @@ limit.maxIDLength:
 system.forceSearchAttributesCacheRefreshOnRead:
   - value: true # Dev setup only. Please don't turn this on in production.
     constraints: {}
+frontend.enableUpdateWorkflowExecution:
+  - value: true
+    constraints: {}
+frontend.enableSchedules:
+  - value: true
+    constraints: {}
+worker.enableScheduler:
+  - value: true
+    constraints: {}
